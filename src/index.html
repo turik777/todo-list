@@ -31,5 +31,30 @@
             <button>+ Add todo</button>
         </div>
     </div>
+
+    <dialog class="new-todo">
+        <p>Add new todo</p>
+        <div>
+            <label for="todo-name">Name:</label>
+            <input type="text" name="todo-name" id="todo-name">
+        </div>
+        <div>
+            <label for="todo-description">Description:</label>
+            <input type="text" name="todo-description" id="todo-description">
+        </div>
+        <div>
+            <label for="todo-date">Due date:</label>
+            <input type="date" name="todo-date" id="todo-date">
+        </div>
+        <div>
+            <label for="todo-priority">Priority:</label>
+            <select name="todo-priority" id="todo-priority">
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+        </div>
+        <input type="button" value="Add todo">
+    </dialog>
 </body>
 </html>
