@@ -32,11 +32,11 @@ body {
     background-color: #FCFAF8;
 }
 
-h1 {
+.sidebar h1 {
     text-align: center;
 }
 
-.sidebar button {
+.sidebar > button {
     padding: 0.5em;
     border-radius: 0.5em;
     font-size: 1.2em;
@@ -49,10 +49,27 @@ h1 {
 
 .sidebar button:hover {
     background-color: #F2EFED;
+    color: #DC4C3E;
 }
 
 .sidebar p {
     padding: 1em 0;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects button {
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    width: 1.5em;
+    height: 1.5em;
+    border: none;
+    cursor: pointer;
+    background-color: #FCFAF8;
 }
 
 /* Content */
@@ -60,4 +77,30 @@ h1 {
 .content {
     width: 100%;
     padding: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.content-container {
+    width: 50%; 
+}
+
+.content button {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    background-color: #FFFFFF;
+}
+
+.content button:hover {
+    background-color: #FCFAF8;
+    color: #DC4C3E;
+}
+
+#title {
+    margin-bottom: 0.5em;
 }
