@@ -144,7 +144,8 @@ body {
 
 .new-project > input {
     border-radius: 0.5em;
-    padding: 0.5em;
+    padding: 0.5em 1em;
+    margin-top: 0.5em;
     font-size: 1.1em;
     border: none;
     cursor: pointer;
@@ -152,6 +153,65 @@ body {
 }
 
 .new-project > input:hover {
+    background-color: #F2EFED;
+    color: #DC4C3E;
+}
+
+/* New Todo */
+
+.new-todo {
+    position: absolute;
+    top: 20%;
+    padding: 1em;
+    margin: auto;
+    width: 30%;
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: 0 0.2em 0.4em #00000029,
+                0 0.2em 0.4em #0000003B;
+}
+
+.new-todo div:nth-last-child(n+4) {
+    display: flex;
+    flex-direction: column
+}
+
+.new-todo p {
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+.new-todo label {
+    font-size: 1.1em;
+}
+
+#todo-name,
+#todo-description {
+    border: 1px solid #F2EFED;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border-radius: 0.3em;
+    outline-color: #DC4C3E;
+    font-size: 1.2em;
+}
+
+#todo-date,
+#todo-priority {
+    margin: 0.5em;
+    font-size: 1.1em;
+}
+
+.new-todo > input {
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    margin-top: 0.5em;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    background-color: #FCFAF8;
+}
+
+.new-todo > input:hover {
     background-color: #F2EFED;
     color: #DC4C3E;
 }
