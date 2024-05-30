@@ -3,3 +3,61 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html,
+body {
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    display: flex;
+    padding: 2em;
+}
+
+.sidebar,
+.content {
+    height: 100%;
+    border-radius: 0.5em;
+    box-shadow: 0 0.2em 0.4em #00000029,
+                0 0.2em 0.4em #0000003B;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 15em;
+    margin-right: 1.5em;
+    padding: 1em;
+    background-color: #FCFAF8;
+}
+
+h1 {
+    text-align: center;
+}
+
+.sidebar button {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    background-color: #FCFAF8;
+}
+
+.sidebar button:hover {
+    background-color: #F2EFED;
+}
+
+.sidebar p {
+    padding: 1em 0;
+}
+
+/* Content */
+
+.content {
+    width: 100%;
+    padding: 1em;
+}
