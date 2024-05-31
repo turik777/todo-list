@@ -1,5 +1,6 @@
 import "./style.css";
 import { addProject } from "./addTodo";
+import { createProjectDOM } from "./createProject";
 
 const showProjectDialog = document.querySelector(".projects button");
 const projectDialog = document.querySelector(".new-project");
@@ -16,6 +17,7 @@ showProjectDialog.addEventListener("click", () => {
 
 addProjectButton.addEventListener("click", () => {
     addProject(projectTitle.value);
+    createProjectDOM();
     projectDialog.style.display = "none";
     projectTitle.value = "";
 })
