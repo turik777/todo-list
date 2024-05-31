@@ -36,7 +36,8 @@ body {
     text-align: center;
 }
 
-.sidebar > button {
+.sidebar > button,
+.sidebar div:last-of-type button {
     padding: 0.5em;
     border-radius: 0.5em;
     font-size: 1.2em;
@@ -47,7 +48,8 @@ body {
     background-color: #FCFAF8;
 }
 
-.sidebar button:hover {
+.sidebar button:hover,
+.sidebar div:last-of-type button:hover {
     background-color: #F2EFED;
     color: #DC4C3E;
 }
