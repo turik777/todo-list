@@ -22,14 +22,17 @@
             <label for="project-title">Title:</label>
             <input type="text" name="project-title" id="project-title">
         </div>
-        <input type="button" value="Add project">
+        <div>
+            <input type="button" value="Add project">
+            <input type="button" value="Close">
+        </div>
     </dialog>
 
     <div class="content">
         <div class="content-container">
             <h1 id="title">All todos</h1>
             <div class="todos"></div>
-            <button>+ Add todo</button>
+            <button class="add-todo">+ Add todo</button>
         </div>
     </div>
 
@@ -55,7 +58,10 @@
                 <option value="3">High</option>
             </select>
         </div>
-        <input type="button" value="Add todo">
+        <div>
+            <input type="button" value="Add todo">
+            <input type="button" value="Close">
+        </div>
     </dialog>
 </body>
 </html>
