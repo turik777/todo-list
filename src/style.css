@@ -107,6 +107,23 @@ body {
     margin-bottom: 0.5em;
 }
 
+.todo {
+    padding: 0.5em 1em;
+    border: 1px solid #F2EFED;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+
+.todo div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+
+.todo-description {
+    color: #888888;
+}
+
 /* New Project */
 
 .new-project {
