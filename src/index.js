@@ -7,13 +7,15 @@ const todosButton = document.getElementById("todos-button");
 
 const showProjectDialog = document.querySelector(".projects button");
 const projectDialog = document.querySelector(".new-project");
-const addProjectButton = document.querySelector(".new-project > input");
+const addProjectButton = document.querySelector(".new-project div:last-of-type > input");
+const closeProjectDialog = document.querySelector(".new-project div:last-of-type > input:last-of-type");
 const projectTitle = document.getElementById("project-title");
 const title = document.getElementById("title");
 
-const showTodoDialog = document.querySelector(".content button");
+const showTodoDialog = document.querySelector(".add-todo");
 const todoDialog = document.querySelector(".new-todo");
-const addTodoButton = document.querySelector(".new-todo > input");
+const addTodoButton = document.querySelector(".new-todo div:last-of-type > input");
+const closeTodoDialog = document.querySelector(".new-todo div:last-of-type > input:last-of-type")
 const todoTitle = document.getElementById("todo-name");
 const todoDescription = document.getElementById("todo-description");
 const todoDate = document.getElementById("todo-date");
@@ -35,6 +37,10 @@ addProjectButton.addEventListener("click", () => {
     projectTitle.value = "";
 })
 
+closeProjectDialog.addEventListener("click", () => 
+    projectDialog.style.display = "none"
+);
+
 showTodoDialog.addEventListener("click", () => {
     todoDialog.style.display = "block";
 })
@@ -48,5 +54,9 @@ addTodoButton.addEventListener("click", () => {
     todoDate.value = "";
     todoPriority.value = "";
 })
+
+closeTodoDialog.addEventListener("click", () => 
+    todoDialog.style.display = "none"
+);
 
 console.log(projectList);
