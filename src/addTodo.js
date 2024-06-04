@@ -1,11 +1,12 @@
 export const projectList = [];
 
 class Todo {
-    constructor(todoTitle, description, dueDate, priority) {
+    constructor(todoTitle, description, dueDate, priority, projectTitle) {
         this.todoTitle = todoTitle;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.project = projectTitle;
     }
 }
 
@@ -22,7 +23,7 @@ export function addProject(projectTitle) {
 }
 
 export function addTodo(todoTitle, description, dueDate, priority, projectTitle) {
-    const todo = new Todo(todoTitle, description, dueDate, priority);
+    const todo = new Todo(todoTitle, description, dueDate, priority, projectTitle);
     const project = projectList.find(project => 
         project.projectTitle === projectTitle);
     if (projectTitle === "All todos") { 
