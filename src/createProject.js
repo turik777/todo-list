@@ -1,7 +1,8 @@
 import { projectList } from "./addTodo";
+import { createTodoDOM } from "./createTodo";
 
 const sidebar = document.querySelector(".sidebar div:last-of-type");
-const contentTitle = document.querySelector(".content h1");
+export const contentTitle = document.querySelector(".content h1");
 
 export function createProjectDOM() {
     sidebar.innerHTML = "";
@@ -14,6 +15,8 @@ export function createProjectDOM() {
 
         projectButton.addEventListener("click", () => {
             contentTitle.textContent = project.projectTitle;
+
+            createTodoDOM(project.projectTitle);
         })
     });
 
