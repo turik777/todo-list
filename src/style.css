@@ -31,10 +31,12 @@ body {
     margin-right: 1.5em;
     padding: 1em;
     background-color: #FCFAF8;
+    overflow-x: hidden;
 }
 
 .sidebar h1 {
     text-align: center;
+    color: #DC4C3E;
 }
 
 .sidebar > button,
@@ -47,6 +49,7 @@ body {
     border: none;
     cursor: pointer;
     background-color: #FCFAF8;
+    overflow-wrap: break-word;
 }
 
 .sidebar div div {
@@ -69,6 +72,10 @@ body {
 .sidebar div:last-of-type button:hover {
     background-color: #F2EFED;
     color: #DC4C3E;
+}
+
+.sidebar div:last-of-type button:last-of-type:hover {
+    background-color: #DC4C3E;
 }
 
 .sidebar p {
@@ -132,6 +139,12 @@ body {
     margin-bottom: 1em;
 }
 
+.todo:hover {
+    cursor: pointer;
+    background-color: #FCFAF8;
+    color: #DC4C3E;
+}
+
 .todo div:first-of-type {
     display: flex;
     justify-content: space-between;
@@ -150,10 +163,12 @@ body {
     border: none;
     cursor: pointer;
     background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
 }
 
 .todo div:last-of-type button:hover {
-    background-color: #FCFAF8;
+    background-color: #DC4C3E;
 }
 
 .todo div:last-of-type img {
@@ -161,7 +176,13 @@ body {
 }
 
 .todo-description {
+    width: 29em;
+    white-space: nowrap;
+    overflow: hidden;
     color: #888888;
+    background: linear-gradient(90deg, #888888 80%, #FFFFFF);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* New Project */
@@ -236,7 +257,8 @@ body {
                 0 0.2em 0.4em #0000003B;
 }
 
-.new-todo div:nth-last-child(n+4) {
+.new-todo div:nth-last-child(n+4),
+.todo-expand div:nth-last-child(n+4) {
     display: flex;
     flex-direction: column
 }
@@ -246,12 +268,15 @@ body {
     margin-bottom: 1em;
 }
 
-.new-todo label {
+.new-todo label,
+.todo-expand label {
     font-size: 1.1em;
 }
 
 #todo-name,
-#todo-description {
+#todo-description,
+#todo-name-expand,
+#todo-description-expand {
     border: 1px solid #F2EFED;
     padding: 0.5em;
     margin: 0.5em 0;
@@ -260,13 +285,20 @@ body {
     font-size: 1.2em;
 }
 
+#todo-description {
+    height: 6em;
+}
+
 #todo-date,
-#todo-priority {
+#todo-priority,
+#todo-date-expand,
+#todo-priority-expand {
     margin: 0.5em;
     font-size: 1.1em;
 }
 
-.new-todo div:last-of-type > input {
+.new-todo div:last-of-type > input,
+.todo-expand div:last-of-type > input {
     border-radius: 0.5em;
     padding: 0.5em 1em;
     margin-top: 0.5em;
@@ -276,7 +308,19 @@ body {
     background-color: #FCFAF8;
 }
 
-.new-todo div:last-of-type > input:hover {
+.new-todo div:last-of-type > input:hover,
+.todo-expand div:last-of-type > input:hover {
     background-color: #F2EFED;
     color: #DC4C3E;
+}
+
+.todo-expand {
+    padding: 1em;
+    margin: auto;
+    margin-bottom: 1em;
+    border: none;
+    border: 1px solid #F2EFED;
+    border-radius: 0.5em;
+    box-shadow: 0 0.2em 0.4em #00000029,
+                0 0.2em 0.4em #0000003B;
 }
