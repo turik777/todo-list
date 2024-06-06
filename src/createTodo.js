@@ -2,6 +2,8 @@ import { projectList } from "./addTodo";
 
 export const todos = document.querySelector(".todos");
 
+let isExpand = false;
+
 function createTodo(element) {
     const todo = document.createElement("div");
     todo.classList.add("todo");
@@ -19,7 +21,7 @@ function createTodo(element) {
     
     todoTitle.textContent = element.todoTitle;
     todoDescription.textContent = element.description;
-    todoDate.textContent = element.dueDate;
+    todoDate.textContent = `Due date: ${element.dueDate}`;
     const todoProject = element.project;
 
     switch (element.priority) {
@@ -57,7 +59,14 @@ function createTodo(element) {
         }
 
         todo.remove();
-    })
+    });
+
+    todo.addEventListener("click", () => {
+        if (!isExpand) {
+            isExpand = true;
+            expandTodo(todo, todoTitle, todoDescription, todoDate, element);
+        }
+    });
 }
 
 export function createTodoDOM(projectName) {
@@ -83,3 +92,79 @@ export function createTodoDOM(projectName) {
 }
 
 createTodoDOM("All todos");
+
+function expandTodo(todo, todoTitle, todoDescription, todoDate, element) {
+    todo.style.display = "none";
+
+    const todoExpand = document.createElement("div");
+    todoExpand.classList.add("todo-expand");
+    todo.parentNode.insertBefore(todoExpand, todo.nextSibling);
+
+    todoExpand.innerHTML = `
+        <div>
+            <label for="todo-name-expand">Name:</label>
+            <input type="text" name="todo-name-expand" id="todo-name-expand">
+        </div>
+        <div>
+            <label for="todo-description-expand">Description:</label>
+            <input type="text" name="todo-description-expand" id="todo-description-expand">
+        </div>
+        <div>
+            <label for="todo-date-expand">Due date:</label>
+            <input type="date" name="todo-date-expand" id="todo-date-expand">
+        </div>
+        <div>
+            <label for="todo-priority-expand">Priority:</label>
+            <select name="todo-priority-expand" id="todo-priority-expand">
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+        </div>
+        <div>
+            <input type="button" value="Save">
+        </div>
+    `;
+
+    const todoNameExpand = document.getElementById("todo-name-expand");
+    const todoDescriptionExpand = document.getElementById("todo-description-expand");
+    const todoDateExpand = document.getElementById("todo-date-expand");
+    const todoPriorityExpand = document.getElementById("todo-priority-expand");
+
+    todoNameExpand.value = element.todoTitle;
+    todoDescriptionExpand.value = element.description;
+    todoDateExpand.value = element.dueDate;
+    todoPriorityExpand.value = element.priority;
+
+    const saveButton = document.querySelector(".todos input[type='button']");
+
+    saveButton.addEventListener("click", () => {
+        isExpand = false;
+
+        element.todoTitle = todoNameExpand.value;
+        element.description = todoDescriptionExpand.value;
+        element.dueDate = todoDateExpand.value;
+        element.priority = todoPriorityExpand.value;
+
+        todoTitle.textContent = element.todoTitle;
+        todoDescription.textContent = element.description;
+        todoDate.textContent = element.dueDate;
+
+        switch (element.priority) {
+            case "1":
+                todo.style.borderLeft = "1em solid green";
+                break;
+            case "2":
+                todo.style.borderLeft = "1em solid orange";
+                break;
+            case "3":
+                todo.style.borderLeft = "1em solid red";
+                break;
+            default:
+                break;
+        }
+        
+        todoExpand.remove();
+        todo.style.display = "block";
+    })
+}
