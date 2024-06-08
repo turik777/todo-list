@@ -1,5 +1,6 @@
 import { projectList } from "./addTodo";
 import { createTodoDOM } from "./createTodo";
+import { saveContent } from "./localStorage";
 
 const sidebar = document.querySelector(".sidebar div:last-of-type");
 export const contentTitle = document.querySelector(".content h1");
@@ -35,9 +36,9 @@ export function createProjectDOM() {
 
             createTodoDOM(project.projectTitle);
             div.remove();
+            saveContent();
         })
     });
-
 }
 
 createProjectDOM();

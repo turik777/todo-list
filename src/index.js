@@ -2,6 +2,7 @@ import "./style.css";
 import { projectList, addProject, addTodo } from "./addTodo";
 import { createProjectDOM, contentTitle } from "./createProject";
 import { createTodoDOM } from "./createTodo";
+import { saveContent } from "./localStorage";
 
 const todosButton = document.getElementById("todos-button");
 
@@ -35,6 +36,7 @@ addProjectButton.addEventListener("click", () => {
     createProjectDOM();
     projectDialog.style.display = "none";
     projectTitle.value = "";
+    saveContent();
 })
 
 closeProjectDialog.addEventListener("click", () => 
@@ -53,10 +55,9 @@ addTodoButton.addEventListener("click", () => {
     todoDescription.value = "";
     todoDate.value = "";
     todoPriority.value = "";
+    saveContent();
 })
 
 closeTodoDialog.addEventListener("click", () => 
     todoDialog.style.display = "none"
 );
-
-console.log(projectList);

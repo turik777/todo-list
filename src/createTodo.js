@@ -1,4 +1,5 @@
 import { projectList } from "./addTodo";
+import { saveContent } from "./localStorage";
 
 export const todos = document.querySelector(".todos");
 
@@ -59,6 +60,7 @@ function createTodo(element) {
         }
 
         todo.remove();
+        saveContent();
     });
 
     todo.addEventListener("click", () => {
@@ -148,7 +150,7 @@ function expandTodo(todo, todoTitle, todoDescription, todoDate, element) {
 
         todoTitle.textContent = element.todoTitle;
         todoDescription.textContent = element.description;
-        todoDate.textContent = element.dueDate;
+        todoDate.textContent = `Due date: ${element.dueDate}`;
 
         switch (element.priority) {
             case "1":
@@ -166,5 +168,6 @@ function expandTodo(todo, todoTitle, todoDescription, todoDate, element) {
         
         todoExpand.remove();
         todo.style.display = "block";
+        saveContent();
     })
 }
