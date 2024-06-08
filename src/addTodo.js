@@ -1,6 +1,6 @@
 export const projectList = [];
 
-class Todo {
+export class Todo {
     constructor(todoTitle, description, dueDate, priority, projectTitle) {
         this.todoTitle = todoTitle;
         this.description = description;
@@ -10,7 +10,7 @@ class Todo {
     }
 }
 
-class Project {
+export class Project {
     constructor(projectTitle) {
         this.projectTitle = projectTitle;
         this.todoList = [];
