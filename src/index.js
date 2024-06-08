@@ -1,8 +1,8 @@
 import "./style.css";
-import { projectList, addProject, addTodo } from "./addTodo";
-import { createProjectDOM, contentTitle } from "./createProject";
-import { createTodoDOM } from "./createTodo";
-import { saveContent } from "./localStorage";
+import { addProject, addTodo } from "./js/addTodo";
+import { createProjectDOM, contentTitle } from "./js/createProject";
+import { createTodoDOM } from "./js/createTodo";
+import { saveContent } from "./js/localStorage";
 
 const todosButton = document.getElementById("todos-button");
 
